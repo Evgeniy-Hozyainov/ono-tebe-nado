@@ -1,3 +1,11 @@
+/* overlay */
+.overlay {
+    position: absolute;
+    inset: 0;
+    opacity: 0.6;
+    background: #000;
+}
+
 /* header styles */
 
 .header {
@@ -47,6 +55,7 @@
 }
 
 .header__logo-image {
+    object-fit: contain;
     height: 105px;
 }
 
@@ -78,24 +87,19 @@
     background-size: cover;
 }
 
-/* overlay */
-.cover::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    opacity: 0.6;
-    background: #000;
-}
-
 .cover__title {
     position: relative;
-    z-index: 10;
     color: #fff;
     font-weight: bold;
     font-size: 100px;
     font-style: normal;
     letter-spacing: 30px;
     text-transform: uppercase;
+    line-height: 100%; /* 100px */
+}
+
+.cover__title > .aligned-text:first-child {
+    line-height: 115%; /* 115px */
 }
 
 .aligned-text {
@@ -103,9 +107,8 @@
 }
 
 .aligned-text_center {
-    padding-top: 9px;
-    padding-bottom: 3px;
     text-align: center;
+    padding: 20px 0;
 }
 
 .aligned-text_right {
@@ -122,12 +125,11 @@
 
 .cover__description {
     position: relative;
-    z-index: 1;
     display: flex;
     justify-content: end;
     align-items: center;
     gap: 76px;
-    margin-top: 127px;
+    margin-top: 135px;
 }
 
 .cover__description-text {
@@ -150,6 +152,12 @@
     text-align: center;
     text-transform: uppercase;
     background-color: transparent;
+    cursor: pointer;
+}
+
+.bet-button:hover {
+    border: 1px solid #fd0;
+    color: #fd0;
 }
 
 /* lots section */
@@ -193,30 +201,19 @@
     justify-content: space-between;
     height: 100%;
     padding: 50px 40px;
-}
-
-/* overlay */
-.card::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    opacity: 0.6;
-    background-color: #000;
+    background-size: cover;
 }
 
 .card_type_film {
     background-image: url(../images/card-lot-01.jpg);
-    background-size: cover;
 }
 
 .card_type_book {
     background-image: url(../images/card-lot-02.jpg);
-    background-size: cover;
 }
 
 .card_type_picture {
     background-image: url(../images/card-lot-03.jpg);
-    background-size: cover;
 }
 
 .card__title {
@@ -236,7 +233,6 @@
     z-index: 1;
     color: #fff;
     font-size: 20px;
-    font-style: normal;
     line-height: 120%; /* 24px */
 }
 
@@ -273,7 +269,6 @@
 
 .about__title {
     margin: 100px 0;
-    color: #000;
     font-weight: bold;
     font-size: 40px;
     font-style: normal;
@@ -282,7 +277,6 @@
 }
 
 .about__text {
-    color: #000;
     font-size: 20px;
     font-style: normal;
     line-height: normal;
